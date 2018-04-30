@@ -92,7 +92,7 @@ layout: default
     <!--information, please contact me so that I will be able to do necessary actions.-->
 <!--</p>-->
 
-<p><strong>Google Account</strong></p>
+### Google Account
 <p>
     To work with external services, such as GoogleDrive and DropBox, you need to authorize by applying an authorization request using an active account on your device.
     The so-called "GET_ACCOUNTS permission", while we do not transfer or store the list of accounts, you can not worry about the safety and confidentiality of such data, for more information you can learn from the privacy policy of these providers.
