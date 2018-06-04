@@ -1,0 +1,4 @@
+curl 'http://www.mysite.org/pic[001-125].jpg' -o "pic#1.jpg"
+
+
+curl "http://sly2m.com/sly2m/IQ/images/01_[01-41].jpg" -o "ic_#1.jpg"

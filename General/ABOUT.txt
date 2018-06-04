@@ -1,0 +1,11 @@
+C:\ProgramData\Acunetix WVS 9\Data\General\subdomain.txt
+C:\ProgramData\Acunetix WVS 10\Data\General\subdomain.txt
+C:\ProgramData\Acunetix Manual Tools\Data\General\subdomain.txt
+
+userlist.txt
+passlist.txt
+
+
+
+
+
