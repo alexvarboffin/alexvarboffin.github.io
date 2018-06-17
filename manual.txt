@@ -1,0 +1,22 @@
+set ADB="D:\Program Files\Nox\bin\nox_adb.exe"
+rem %ADB% connect 127.0.0.1:62001
+
+
+
+rem ::: CHARLES :::
+
+rem %ADB% shell am start -a android.intent.action.VIEW -d http://chls.pro/ssl
+%ADB% push charles_4.2.5.crt /sdcard/charles_4.2.5.crt
+
+
+::: FIDDLER :::
+
+%ADB% shell am start -a android.intent.action.VIEW -d http://127.0.0.1:8888/
+%ADB% push FiddlerRoot.cer /sdcard/FiddlerRoot.cer
+
+
+::: Aunetix :::
+%ADB% push "C:\ProgramData\Acunetix 11\certs" /sdcard/acunetix_11.cer
+rem C:\ProgramData\Acunetix 11 Trial\certs
+
+%ADB% push "C:\ProgramData\Acunetix WVS 10\Data\Certs" /sdcard/acunetix_10.cer
