@@ -80,6 +80,7 @@ management
 sales
 marketing
 billing
+banner
 accounting
 payroll
 it
