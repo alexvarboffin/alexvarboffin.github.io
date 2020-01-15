@@ -1,12 +1,28 @@
 Windows Registry Editor Version 5.00
 
+; Context menu Extension for png, jpg
+; Google Play image generator, just install imagemagick.exe 
+
+[HKEY_CLASSES_ROOT\*\shell\Custom Menu]
+"MUIVerb"="## CONVERTER ##"
+"SubCommands"="ROTATE_90;1280x720;180x120;Header;pixel_1440x2880;pixel_2880x1440;Google_Play_1024x500;GP_512x512;Google_Play_180x120;android-bg-480x800;kawork-660x440;256x256_JPG;42x42px"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\killserver]
+"Icon"="C:\\Windows\\System32\\calc.exe"
+"Position"="Middle"
+@="ADB kill-server"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\killserver\Command]
+@="\"C:\\android\\sdk\\platform-tools\\adb.exe\" kill-server"
+
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\zzzzzz]
 "Icon"="C:\\Windows\\System32\\calc.exe"
 "Position"="Middle"
 @="ADB_INSTALL"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\zzzzzz\Command]
-@="\"D:\\android\\sdk\\platform-tools\\adb.exe\" install -r \"%1\""
+@="\"C:\\android\\sdk\\platform-tools\\adb.exe\" install -r \"%1\""
 
 
 
@@ -16,91 +32,56 @@ Windows Registry Editor Version 5.00
 @="$NOX adb install"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\nox_adb_install\Command]
-@="\"D:\\Program Files\\Nox\\bin\\nox_adb.exe -s 127.0.0.1:62001\" install -r \"%1\""
-
-
-[HKEY_CLASSES_ROOT\*\shell\Custom Menu]
-"MUIVerb"="$_RESIZER_$"
-"SubCommands"="1280x720;180x120;Header;pixel_1440x2880;pixel_2880x1440;Google_Play_1024x500;GP_512x512;Google_Play_180x120;android-bg-480x800;kawork-660x440"
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\1280x720]
+@="\"D:\\Program Files\\Nox\\bin\\nox_adb.exe -s 127.0.0.1:62001\" install -r \"%1\""[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\ROTATE_90]
+@="ROTATE_90"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\ROTATE_90\command]
+@="cmd /c convert -background none -rotate \"90\" \"%1\" %random%.png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\1280X720]
 @="1280x720"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\1280x720\command]
 @="cmd /c convert \"%1\" -resize 1280x720! 1280x720_tv_banner_\"%~n1\".png"
-
-
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\180x120]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\180X120]
 @="180x120"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\180x120\command]
-@="cmd /c convert \"%1\" -resize 180x120! 180x120__\"%~n1\".png"
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Header]
+@="cmd /c convert \"%1\" -resize 180x120! 180x120_icon_\"%~n1\".png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\HEADER]
 @="Header"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Header\command]
 @="cmd /c convert \"%1\" -resize 504x288 nav_header.png"
-
-
-
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\pixel_1440x2880]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PIXEL_1440X2880]
 @="pixel_1440x2880"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\pixel_1440x2880\command]
-@="cmd /c convert \"%1\" -resize 1440x2880! pixel_1440x2880.png"
-
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\pixel_2880x1440]
+@="cmd /c convert \"%1\" -resize 1440x2880! pixel_1440x2880-%%RANDOM%%.png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PIXEL_2880X1440]
 @="pixel_2880x1440"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\pixel_2880x1440\command]
-@="cmd /c convert \"%1\" -resize 2880x1440! pixel_2880x1440.png"
-
-
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Google_Play_1024x500]
+@="cmd /c convert \"%1\" -resize 2880x1440! pixel_2880x1440-%%RANDOM%%.png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\GOOGLE_PLAY_1024X500]
 @="Google_Play_1024x500"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Google_Play_1024x500\command]
-@="cmd /c convert \"%1\" -resize 1024x500! Google_Play_1024x500.png"
-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Google_Play_180x120]
-@="Google_Play_180x120"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Google_Play_180x120\command]
-@="cmd /c convert \"%1\" -resize 180x120! Google_Play_180x120.png"
-
- 
- 
- 
- [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\android-bg-480x800]
-@="android-bg-480x800"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\android-bg-480x800\command]
-@="cmd /c convert \"%1\" -resize 480x800! android-bg-480x800.jpg"
- 
- 
- 
- [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\kawork-660x440]
-@="kawork-660x440"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\kawork-660x440\command]
-@="cmd /c convert \"%1\" -resize 660x440! kawork-660x440.png"
- 
- 
- 
-  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\GP_512x512]
+@="cmd /c convert \"%1\" -resize 1024x500! Google_Play_1024x500-%%RANDOM%%.png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\GP_512X512]
 @="GP_512x512"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\GP_512x512\command]
-@="cmd /c convert \"%1\" -resize 512x512! GP_512x512.png"
+@="cmd /c convert \"%1\" -resize 512x512! GP_512x512-%%RANDOM%%.png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\GOOGLE_PLAY_180X120]
+@="Google_Play_180x120"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Google_Play_180x120\command]
+@="cmd /c convert \"%1\" -resize 180x120! Google_Play_180x120-%%RANDOM%%.png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\ANDROID-BG-480X800]
+@="android-bg-480x800"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\android-bg-480x800\command]
+@="cmd /c convert \"%1\" -resize 480x800! android-bg-480x800-%%RANDOM%%.jpg"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\KAWORK-660X440]
+@="kawork-660x440"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\kawork-660x440\command]
+@="cmd /c convert \"%1\" -resize 660x440! kawork-660x440-%%RANDOM%%.png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\256X256_JPG]
+@="256x256_JPG"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\256x256_JPG\command]
+@="cmd /c convert \"%1\" -resize 256x256! 256x256\"%~n1\".jpg"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\42X42PX]
+@="42x42px"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\42x42px\command]
+@="cmd /c convert \"%1\" -resize 42x42 \"ic_%%~n1%%_42x42.png"
+
