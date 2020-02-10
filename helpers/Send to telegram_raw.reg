@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+; https://curl.haxx.se/windows/
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\sent_to_telegram]
+"Icon"="C:\\Windows\\System32\\calc.exe"
+"Position"="Middle"
+@="$ Send to telegram $"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\sent_to_telegram\Command]
+@="cmd /c \"C:\\curl\\bin\\curl.exe --insecure \"https://api.telegram.org/bot220535441:AAGSE2J0uJp0X87cxyup4kL9ytybvb78AGk/sendDocument?chat_id=-1001158965247\" -F chat_id=-1001158965247 -F document=\"@%1\""
+
