@@ -5,7 +5,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\*\shell\Custom Menu]
 "MUIVerb"="## CONVERTER ##"
-"SubCommands"="ROTATE_90;1280x720;180x120;Header;pixel_1440x2880;pixel_2880x1440;Google_Play_1024x500;GP_512x512;Google_Play_180x120;android-bg-480x800;kawork-660x440;256x256_JPG;42x42px;24x24px"
+"SubCommands"="ROTATE_90;1280x720;180x120;Header;pixel_1440x2880;pixel_2880x1440;Google_Play_1024x500;GP_512x512;Google_Play_180x120;android-bg-480x800;kawork-660x440;256x256_JPG;64x64px;42x42px;24x24px;1944x600px"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\killserver]
 "Icon"="%SystemRoot%\\System32\\SHELL32.dll"
@@ -104,6 +104,12 @@ Windows Registry Editor Version 5.00
 @="256x256_JPG"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\256x256_JPG\command]
 @="cmd /c convert \"%1\" -resize 256x256! 256x256\"%~n1\".jpg"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\64X64PX]
+"Icon"="C:\\Windows\\System32\\Shell32.dll,144"
+
+@="64x64px"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\64x64px\command]
+@="cmd /c convert \"%1\" -resize 64x64 \"ic_%%~n1%%_64x64.png"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\42X42PX]
 "Icon"="C:\\Windows\\System32\\Shell32.dll,144"
 
@@ -116,4 +122,10 @@ Windows Registry Editor Version 5.00
 @="24x24px"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\24x24px\command]
 @="cmd /c convert \"%1\" -resize 24x24 \"ic_%%~n1%%_24x24.png"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\1944X600PX]
+"Icon"="C:\\Windows\\System32\\Shell32.dll,144"
+
+@="1944x600px"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\1944x600px\command]
+@="cmd /c convert \"%1\" -resize 1944x600 \"ic_%%~n1%%_1944x600.png"
 
